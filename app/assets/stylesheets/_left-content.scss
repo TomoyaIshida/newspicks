@@ -1,0 +1,166 @@
+.left-content{
+  height: 100%;
+  min-height: 100%;
+  width: 216px;
+  float: left;
+  &__top{
+    height: 183px;
+    width: 216px;
+    float: left;
+    &__main{
+      height: 138px;
+      width: 216px;
+      float: left;
+      &__image{
+        height: 80px;
+        width: 216px;
+        float: left;
+      }
+      &__name{
+        height: 58px;
+        width: 216px;
+        background-color: white;
+        float: left;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    &__bottom{
+      height: 45px;
+      width: 216px;
+      float: left;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      &__follow{
+        height: 45px;
+        width: 108px;
+        float: left;
+        &__count{
+          height: 25px;
+          width: 108px;
+          font-size: 14px;
+          text-align: center;
+          line-height: 25px;
+          margin-top: 4px;
+          font-weight: bold;
+        }
+        &__caption{
+          height: 10px;
+          width: 108px;
+          font-size: 8px;
+          text-align: center;
+          line-height: 10px;
+          color: #666;
+        }
+      }
+      &__follower{
+        height: 45px;
+        width: 107px;
+        border-left: 1px solid #eee;
+        float: left;
+        &__count{
+          height: 25px;
+          width: 107px;
+          font-size: 14px;
+          text-align: center;
+          line-height: 25px;
+          margin-top: 4px;
+          font-weight: bold;
+        }
+        &__caption{
+          height: 10px;
+          width: 107px;
+          font-size: 8px;
+          text-align: center;
+          line-height: 10px;
+          color: #666;
+        }
+      }
+    }
+  }
+  &__main{
+    height: calc(100vh - 135px);
+    width: 216px;
+    float: left;
+    &__top{
+      height: 45px;
+      width: 216px;
+      float: left;
+      border-bottom: 1px solid #eee;
+      &__title{
+        height: 45px;
+        width: 164px;
+        float: left;
+        line-height: 45px;
+        color: #37509C;
+        font-size: 12px;
+        font-weight: bold;
+        padding-left: 16px;
+      }
+      &__icon{
+        height: 45px;
+        width: 31px;
+        float: left;
+        line-height: 45px;
+        color: #37509C;
+        font-size: 12px;
+        padding-left: 5px;
+      }
+    }
+    &__timeline{
+      height: 168px;
+      width: 216px;
+      float: left;
+      background-color: red;
+      position: relative;
+      &__border{
+        height: 168px;
+        width: 184px;
+        margin: 0 16px;
+        border-bottom: 1px solid #eee;
+        background-color: green;
+      }
+      &__main{
+        height: 120px;
+        width: 184px;
+        margin: 16px 16px;
+        background-color: blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        &__info{
+          height: 30px;
+          width: 174px;
+          &__image{
+            height: 30px;
+            width: 30px;
+            float: left;
+          }
+          &__data{
+            height: 30px;
+            width:  144px;
+            float: left;
+            &__name{
+              height: 16px;
+              width:  144px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 6px;
+            }
+            &__time{
+              height: 14px;
+              width:  144px;
+              font-size: 10px;
+              margin-left: 6px;
+              color: #999;
+            }
+          }
+        }
+      }
+    }
+  }
+}
