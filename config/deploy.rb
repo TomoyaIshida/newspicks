@@ -15,6 +15,7 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
+set :bundle_without, %w(development test nokogiri).join(" ")
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
