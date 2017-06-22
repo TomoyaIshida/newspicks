@@ -14,13 +14,13 @@
 
 ### Association
 
-* has_many:article, through: user_articles
+* has_many:articles
+
+* has_many:articles, through: users_articles
 
 * has_many:comments
 
 * has_many:pics
-
-* has_many:articles
 
 
 ## articles table
@@ -36,13 +36,13 @@
 
 ### Association
 
-* has_many:user, through: user_articles
+* has_many:users
+
+* has_many:users, through: users_articles
 
 * has_many:comments
 
 * has_many:pics
-
-* has_many:users
 
 
 ## comments table
@@ -76,7 +76,7 @@
 * belongs_to:article
 
 
-## user_articles table
+## users_articles table
 
 
 |   Column   |       Type      |            Options              |
