@@ -1,0 +1,150 @@
+.main-content{
+  height: 1000px;
+  min-height: 100%;
+  width: calc(100% - 216px);
+  float: left;
+  background-color: #F5F5F5;
+  overflow: scroll;
+  &__top{
+    height: 378px;
+    width: 100%;
+    &__left{
+      height: 378px;
+      width: 66%;
+      float: left;
+      margin-right: 1px;
+      position: relative;
+      background-image: image-url('grecee.jpg');
+      &__info{
+        height: 140px;
+        width: 766px;
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        cursor: pointer;
+        &__picks{
+          height: 30px;
+          width: 70px;
+          margin-bottom: 10px;
+          border: 1px solid #fff;
+          &__count{
+            height: 30px;
+            width: 30px;
+            float: left;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 30px;
+            padding-left: 5px;
+          }
+          &__caption{
+            height: 30px;
+            width: 35px;
+            float: left;
+            color: #fff;
+            font-size: 8px;
+            text-align: left;
+            line-height: 33px;
+          }
+        }
+        &__title{
+          height: 80px;
+          width: 700px;
+          margin-bottom: 5px;
+          color: #fff;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        &__sorce{
+          height: 30px;
+          width: 110px;
+          float: left;
+          color: #ecf0f1;
+          font-size: 5px;
+          line-height: 30px;
+        }
+        &__time{
+          height: 30px;
+          width: 70px;
+          float: left;
+          margin-left: 5px;
+          color: #ecf0f1;
+          font-size: 5px;
+          line-height: 30px;
+        }
+      }
+    }
+    &__right{
+      float: left;
+      width: 33%;
+      &__top{
+        height: 188px;
+        width: 415px;
+        margin-bottom: 1px;
+        background-image: image-url('surf.jpg');
+        background-color: red;
+        position: relative;
+      }
+      &__bottom{
+        height: 189px;
+        width: 415px;
+        background-image: image-url('food.jpg');
+        position: relative;
+      }
+    }
+  }
+}
+
+.info{
+  height: 60px;
+  width: 350px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 170px;
+  bottom: 0;
+  margin: auto;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.tag{
+  height: 20px;
+  width: 50px;
+  margin-bottom: 10px;
+  border: 1px solid #F8F8F8;
+  float: left;
+  color: #F4F4F2;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.caption{
+  height: 22px;
+  width: 180px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  float: left;
+  color: #F4F4F2;
+  font-size: 12px;
+  line-height: 22px;
+  padding-left: 7px;
+}
+
+.title{
+  height: 40px;
+  width: 330px;
+  margin-bottom: 10px;
+  clear: both;
+  color: #F4F4F2;
+  font-weight: bold;
+  font-size: 18px;
+}
+
