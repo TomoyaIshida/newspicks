@@ -10,6 +10,7 @@ header{
     font-size: 20px;
     text-align: center;
     line-height: 50px;
+    position: relative;
       a{
         text-decoration: none;
       }
@@ -21,5 +22,43 @@ header{
       }
     }
   }
+}
 
+.userinfo{
+  height: 30px;
+  width: 180px;
+  color: #fff;
+  float: right;
+  position: absolute;
+  top: 0;
+  left: 1180px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#login{
+  height: 30px;
+  width: 70px;
+  background-color: #4277EC;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  float: left;
+  margin-left: 18px;
+  line-height: 30px;
+  -webkit-border-radius: 2px;
+  text-decoration: none;
+}
+#signup{
+  height: 30px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  float: left;
+  line-height: 30px;
+  text-decoration: none;
 }

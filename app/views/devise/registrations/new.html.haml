@@ -17,11 +17,6 @@
         .field
           .field-input
             = f.password_field :password, autocomplete: "off", placeholder: "パスワード(8文字以上)"
-        / .field
-        /   .field-label
-        /     = f.label :password_confirmation
-        /   .field-input
-        /     = f.password_field :password_confirmation, autocomplete: "off"
         .actions
           = f.submit "はじめる", class: 'btn'
     .account-page__inner__text

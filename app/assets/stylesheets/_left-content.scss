@@ -24,6 +24,7 @@
           right: 0;
           bottom: 0;
           margin: auto;
+          background-color: #eee;
         }
       }
       &__name{
@@ -34,6 +35,14 @@
         font-weight: bold;
         text-align: center;
         cursor: pointer;
+        &__signup{
+          height: 34px;
+          width: 150px;
+          margin: 0 auto;
+          position: relative;
+          background-color: #15274D;
+          -webkit-border-radius: 2px;
+        }
       }
     }
     &__bottom{
@@ -197,4 +206,16 @@
       }
     }
   }
+}
+
+#signup-left{
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-decoration: none;
 }

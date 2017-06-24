@@ -2,11 +2,18 @@
 .left-content
   .left-content__top
     .left-content__top__main
-      .left-content__top__main__image
-        .left-content__top__main__image__data
-          = image_tag('profile.jpg', size: '48x48')
-      .left-content__top__main__name
-        Tomoya Ishida
+      - if user_signed_in?
+        .left-content__top__main__image
+          .left-content__top__main__image__data
+            = image_tag('profile.jpg', size: '48x48')
+        .left-content__top__main__name
+          Tomoya Ishida
+      - else
+        .left-content__top__main__image
+          .left-content__top__main__image__data
+        .left-content__top__main__name
+          .left-content__top__main__name__signup
+          = link_to "アカウントを作成する", new_user_registration_path, id: "signup-left"
     .left-content__top__bottom
       .left-content__top__bottom__follow
         .left-content__top__bottom__follow__count

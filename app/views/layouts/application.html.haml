@@ -11,5 +11,12 @@
   %header
     .header__bar
       %h1
-        %a{href: "/"} NewsPicks
+        %a{href: '/'} NewsPicks
+    - if user_signed_in?
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      %a.post{:href => "/tweets/new"} 投稿する
+    - else
+      .userinfo
+        = link_to "アカウント登録", new_user_registration_path, id: 'signup'
+        = link_to "ログイン", new_user_session_path, id: 'login'
     = yield
