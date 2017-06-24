@@ -1,0 +1,57 @@
+.main-content__right{
+  // height: 824px;
+  height: 100%;
+  // width: 344px;
+  width: 30%;
+  background-color: #fff;
+  float: left;
+  margin-top: 45px;
+  &__titlearea{
+    height: 85px;
+    width: 344px;
+    &__title{
+      height: 20px;
+      width: 280px;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
+      line-height: 120px;
+      margin: 0 auto;
+      color: #15274D;
+    }
+  }
+  &__news{
+    height: 92px;
+    width: 344px;
+    &__title{
+      height: 40px;
+      width: 274px;
+      margin: 0 auto;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    &__data{
+      height: 17px;
+      width: 274px;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 25px;
+      &__sitename{
+        height: 15px;
+        width: 70px;
+        float: left;
+        font-size: 12px;
+        color: #666;
+      }
+      &__time{
+        height: 15px;
+        width: 70px;
+        margin-left: 15px;
+        float: left;
+        font-size: 12px;
+        color: #666;
+      }
+    }
+  }
+}

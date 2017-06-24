@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 20170621093037) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "sitename",    default: "", null: false
-    t.string   "url",         default: "", null: false
-    t.string   "title",       default: "", null: false
-    t.string   "description", default: "", null: false
-    t.string   "image",       default: "", null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "sitename",                  default: "", null: false
+    t.string   "url",                       default: "", null: false
+    t.string   "title",                     default: "", null: false
+    t.text     "description", limit: 65535,              null: false
+    t.string   "image",                     default: "", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
 end

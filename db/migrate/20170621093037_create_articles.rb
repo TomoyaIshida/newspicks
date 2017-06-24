@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :sitename, null: false, default: ""
       t.string :url, null: false, default: ""
       t.string :title, null: false, default: ""
-      t.string :description, null: false, default: ""
+      t.text :description, null: false
       t.string :image, null: false, default: ""
       t.timestamps
     end
