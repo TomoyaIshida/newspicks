@@ -28,11 +28,11 @@
 
 |   Column   |       Type      |            Options              |
 |:----------:|:---------------:|:-------------------------------:|
-| sitename   | string          |                                 |
-| url        | string          |                                 |
-| titile     | string          |                                 |
-| description| string          |                                 |
-| image      | string          |                                 |
+| sitename   | string          |null:false                       |
+| url        | string          |null:false                       |
+| titile     | string          |null:false                       |
+| description| text            |null:false                       |
+| image      | string          |null:false                       |
 
 ### Association
 

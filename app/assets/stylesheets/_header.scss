@@ -1,0 +1,25 @@
+header{
+  height: 50px;
+  width: 100%;
+  background-color: #15274D;
+  position: fixed;
+  z-index: 1999;
+  .header__bar{
+    h1{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+      a{
+        text-decoration: none;
+      }
+      a:link{
+        color: #fff;
+      }
+      a:visited{
+        color: #fff;
+      }
+    }
+  }
+
+}
