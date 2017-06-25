@@ -11,5 +11,24 @@
   %header
     .header__bar
       %h1
-        %a{href: "/"} NewsPicks
+        %a{href: '/'} NewsPicks
+    - if user_signed_in?
+      .user-image-top
+        = image_tag(current_user.image, class: "user_image_top")
+      .userinfo
+        %ul.menu
+          %li.menu__single
+            = current_user.name
+            %ul.menu__second-level
+              %li
+                = link_to "設定", edit_user_path(current_user), id: 'setting'
+              %li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, id: 'logout'
+        .userinfo__post
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-commenting-o.fa-lg
+    - else
+      .userinfo
+        = link_to "アカウント登録", new_user_registration_path, id: 'signup'
+        = link_to "ログイン", new_user_session_path, id: 'login'
     = yield

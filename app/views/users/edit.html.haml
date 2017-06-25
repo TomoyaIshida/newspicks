@@ -1,0 +1,28 @@
+#account-page.account-page
+  .account-page__inner__edit.clearfix
+    .account-page__inner__edit__top.account-page__header
+      %h2 アカウント設定
+    .account-page__inner__edit__bottom.user-form
+      = form_for(current_user) do |f|
+        .field
+          .field-input
+            = f.text_field :name, autofocus: true
+        .field
+          .field-input
+            = f.email_field :email
+        .field
+          .field-input
+            = f.text_field :company, placeholder: "会社名"
+        .field
+          .field-input
+            = f.text_field :position, placeholder: "役職"
+        .field
+          .field-input
+            = f.text_field :profile, placeholder: "プロフィール"
+        .field
+          %p#update-image アイコンを選択する
+          .field-input
+            = f.label "image", { class: "fa fa-address-card-o fa-2x user-image"} do
+              = f.file_field :image, style: "display: none;", class: "form-image"
+        .actions
+          = f.submit "保存する", class: 'btn'
