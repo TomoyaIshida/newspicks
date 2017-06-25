@@ -37,6 +37,7 @@
     }
     &__text{
       text-align: center;
+      padding: 0 50px;
       color: #ccc;
       font-size: 12px;
     }
@@ -44,19 +45,23 @@
 
   .account-page__header {
     h2 {
-      margin-bottom: 10px;
       font-size: 20px;
       font-weight: bold;
-      margin: 0 auto;
       text-align: center;
       color: #00133A;
-
       &:after {
         content: '';
         display: block;
         width: 60px;
         margin-top: 5px;
       }
+    }
+
+    P{
+      text-align: center;
+      padding: 10px 50px;
+      color: #333;
+      font-size: 12px;
     }
 
     h5 {

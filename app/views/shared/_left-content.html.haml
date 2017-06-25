@@ -7,7 +7,7 @@
           .left-content__top__main__image__data
             = image_tag('profile.jpg', size: '48x48')
         .left-content__top__main__name
-          Tomoya Ishida
+          = current_user.name
       - else
         .left-content__top__main__image
           .left-content__top__main__image__data

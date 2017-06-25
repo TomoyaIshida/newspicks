@@ -2,9 +2,7 @@
   .account-page__inner.clearfix
     .account-page__inner__top.account-page__header
       %h2 Log in
-      - if controller_name != 'sessions'
-        = link_to "すでにアカウントをお持ちの方はこちら", new_user_registration(resource_name)
-        %br/
+      %p 下記の項目をすべて入力してください。
     .account-page__inner__bottom.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
@@ -16,4 +14,4 @@
           .actions
             = f.submit "ログイン", class: 'btn'
     .account-page__inner__text
-      上記の項目をすべて入力してください。
+      利用開始をもって《利用規約》と《個人情報保護方針》に同意したものとみなします。

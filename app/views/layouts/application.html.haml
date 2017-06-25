@@ -13,8 +13,18 @@
       %h1
         %a{href: '/'} NewsPicks
     - if user_signed_in?
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
-      %a.post{:href => "/tweets/new"} 投稿する
+      .userinfo
+        %ul.menu
+          %li.menu__single
+            = current_user.name
+            %ul.menu__second-level
+              %li
+                = link_to "設定", destroy_user_session_path, method: :delete, id: 'setting'
+              %li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, id: 'logout'
+        .userinfo__post
+          = link_to destroy_user_session_path do
+            %i.fa.fa-commenting-o.fa-lg
     - else
       .userinfo
         = link_to "アカウント登録", new_user_registration_path, id: 'signup'
