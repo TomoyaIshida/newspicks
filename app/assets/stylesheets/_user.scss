@@ -1,3 +1,5 @@
+//ログイン・ログアウト画面
+
 .account-page {
   height: 800px;
   background-color: #eee;
@@ -148,27 +150,93 @@
   }
 }
 
-#error_explanation {
-  margin: 20px 0;
-  padding: 20px 30px;
+//ユーザ編集画面実装に伴う仕様変更
+.account-page__inner__edit {
+  height: 650px;
+  width: 400px;
+  background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 2px;
-
-  h2 {
-    margin-bottom: 14px;
-    color: #d65f4c;
-    font-size: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 105px;
+  margin: auto;
+  &__top{
+    height: 70px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    &:after {
+    clear: both;
+    content: "";
+    display: block;
+    }
   }
-
-  ul {
-    margin: 0;
-    padding-left: 17px;
-    list-style: square;
+  &__bottom{
+    height: 300px;
+    text-align: center;
+    position: relative;
+    &:after {
+    clear: both;
+    content: "";
+    display: block;
+    }
   }
-
-  li {
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
+  &__text{
+    text-align: center;
+    padding: 0 50px;
+    color: #ccc;
+    font-size: 12px;
   }
 }
+
+.user-image{
+  margin-bottom: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  float: left;
+  position: absolute;
+  top: 397px;
+  left: 0;
+  right: 240px;
+  bottom: 0;
+  margin: auto;
+}
+
+
+#update-image{
+  padding: 10px;
+  width: 70%;
+  font-size: 16px;
+  float: left;
+  margin-left: 48px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  color: #27375c;
+}
+// #error_explanation {
+//   margin: 20px 0;
+//   padding: 20px 30px;
+//   border: 1px solid #ddd;
+//   border-radius: 2px;
+
+//   h2 {
+//     margin-bottom: 14px;
+//     color: #d65f4c;
+//     font-size: 10px;
+//   }
+
+//   ul {
+//     margin: 0;
+//     padding-left: 17px;
+//     list-style: square;
+//   }
+
+//   li {
+//     margin: 0;
+//     padding: 0;
+//     font-size: 13px;
+//   }
+// }

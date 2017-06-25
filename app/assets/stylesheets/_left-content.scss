@@ -17,14 +17,14 @@
         &__data{
           height: 48px;
           width: 48px;
-          border: 1px solid #eee;
+          // border: 1px solid #eee;
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
           margin: auto;
-          background-color: #eee;
+          // background-color: #eee;
         }
       }
       &__name{
@@ -218,4 +218,24 @@
   bottom: 0;
   margin: auto;
   text-decoration: none;
+}
+
+i{
+  float: right;
+  line-height: 100px;
+  margin-left: 10px;
+  color: #08233E;
+  position: absolute;
+  top: 16px;
+  left: 81px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+//プロフィール画像
+.user_image_left{
+  height: 48px;
+  width: 48px;
+  border-radius: 48px;
 }

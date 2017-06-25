@@ -31,7 +31,7 @@ header{
   float: right;
   position: absolute;
   top: 0;
-  left: 1180px;
+  left: 1240px;
   right: 0;
   bottom: 0;
   margin: auto;
@@ -75,19 +75,37 @@ header{
   line-height: 40px;
 }
 
-i{
+.fa-commenting-o{
   float: right;
   line-height: 100px;
-  margin-left: 10px;
+  margin-left: 30px;
   color: #ccd4de;
   position: absolute;
   top: 7px;
-  left: 125px;
+  left: 115px;
   right: 0;
   bottom: 0;
   margin: auto;
   font-size: 16px;
 }
+
+.user-image-top{
+  position: absolute;
+  top: 8px;
+  left: 1200px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.user_image_top{
+  height: 34px;
+  width: 34px;
+  border-radius: 38px;
+}
+
+//ドロップダウンメニュー
+
 .menu__single {
   position: relative;
   width: 100px;
