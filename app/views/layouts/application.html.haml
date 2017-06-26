@@ -4,9 +4,8 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Newspicks
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
   %body
   %header
     .header__bar
@@ -18,7 +17,7 @@
       .userinfo
         %ul.menu
           %li.menu__single
-            = current_user.name
+            = link_to current_user.name, user_path(current_user), id: 'mypage'
             %ul.menu__second-level
               %li
                 = link_to "設定", edit_user_path(current_user), id: 'setting'
