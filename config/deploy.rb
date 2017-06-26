@@ -24,6 +24,8 @@ namespace :deploy do
   end
 end
 
+set :linked_files, %w{ config/secrets.yml }
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
