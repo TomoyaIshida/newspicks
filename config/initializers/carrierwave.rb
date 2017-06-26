@@ -14,9 +14,9 @@ CarrierWave.configure do |config|
     case Rails.env
     when 'development'
         config.fog_directory  = 'upload-app-image'
-        config.asset_host = 'https://s3.amazonaws.com/upload-app-image'
+        config.asset_host = 'https://s3-us-west-2.amazonaws.com/upload-app-image'
     when 'production'
         config.fog_directory  = 'upload-app-image'
-        config.asset_host = 'https://s3.amazonaws.com/upload-app-image'
+        config.asset_host = 'https://s3-us-west-2.amazonaws.com/upload-app-image'
     end
 end
