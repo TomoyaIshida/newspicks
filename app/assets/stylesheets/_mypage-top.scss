@@ -1,0 +1,142 @@
+.mypage__top{
+  height: 141px;
+  width: 1440px;
+  position: relative;
+  padding-top: 100px;
+  &__user-area{
+    height: 80px;
+    width: 1040px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    float: left;
+    &__image{
+      height: 80px;
+      width: 80px;
+      float: left;
+    }
+    &__info{
+      height: 80px;
+      width: 900px;
+      float: left;
+      &__name{
+        height: 35px;
+        width: 190px;
+        margin-top: 7px;
+        margin-left: 15px;
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: bold;
+      }
+      &__like{
+        height: 20px;
+        width: 100px;
+        margin-top: 10px;
+        margin-left: 15px;
+        &__caption{
+          height: 15px;
+          font-size: 10px;
+          color: #999;
+          line-height: 20px;
+          float: left;
+        }
+        &__count{
+          height: 15px;
+          font-size: 10px;
+          color: #999;
+          line-height: 20px;
+          float: left;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  &__info-area{
+    height: 55px;
+    width: 100%;
+    margin-top: 141px;
+    float: left;
+    border-top: 1px solid #eee;
+    &__pickbox{
+      height: 55px;
+      width: 288px;
+      float: left;
+      margin-left: 180px;
+      &__picks{
+        height: 51px;
+        width: 96px;
+        float: left;
+        color: #15274D;
+        font-size: 16px;
+        line-height: 51px;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 4px solid #15274D;
+      }
+      &__follow{
+        height: 55px;
+        width: 96px;
+        float: left;
+        &__count{
+          height: 35px;
+          width: 96px;
+          color: #222;
+          text-align: center;
+          line-height: 40px;
+          font-size: 17px;
+          font-weight: bold;
+        }
+        &__caption{
+          height: 20px;
+          width: 96px;
+          color: #999;
+          text-align: center;
+          line-height: 5px;
+          font-size: 10px;
+        }
+      }
+      &__follower{
+        height: 55px;
+        width: 96px;
+        float: left;
+        &__count{
+          height: 35px;
+          width: 96px;
+          color: #222;
+          text-align: center;
+          line-height: 40px;
+          font-size: 17px;
+          font-weight: bold;
+        }
+        &__caption{
+          height: 20px;
+          width: 96px;
+          color: #999;
+          text-align: center;
+          line-height: 5px;
+          font-size: 10px;
+        }
+      }
+    }
+    &__searchbox{
+      height: 55px;
+      width: 195px;
+      float: left;
+      margin-left: 605px;
+      color: #999;
+      text-align: center;
+      line-height: 55px;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+    }
+  }
+}
+
+.user_image_mypage{
+  height: 80px;
+  width: 80px;
+  border-radius: 80px;
+}
