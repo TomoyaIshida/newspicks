@@ -2,7 +2,9 @@ class ArticlesController < ApplicationController
   def index
   end
 
-  #ニュース投稿画面
-  def new
+  def create
+    @url = params[:content]
+    render nothing: true
   end
 end
+
