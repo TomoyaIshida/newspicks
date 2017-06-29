@@ -77,6 +77,7 @@
         border: 1px solid #eee;
         margin-top: 5px;
         margin-left: 10px;
+        border-radius: 33px;
       }
       &__info{
         height: 35px;
@@ -129,4 +130,11 @@
       }
     }
   }
+}
+
+.news_image{
+  // height: 144px;
+  // width: 344px;
+  height: 100%;
+  width: 100%;
 }

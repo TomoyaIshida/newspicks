@@ -11,9 +11,11 @@ $(function(){
     })
     .done(function() {
       console.log("done")
+      location.href = "/"
     })
     .fail(function() {
       console.log("fail")
+      alert('投稿できないURLのようです。プロトタイプのためお許しください。');
     })
   });
 });

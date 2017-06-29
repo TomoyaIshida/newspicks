@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
 
   require 'mechanize'
 
+  def index
+    @articles = Article.order("updated_at DESC").limit(20)
+  end
+
   def create
     @article = Article.new(article_params)
     if @article.save

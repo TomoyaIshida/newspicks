@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def index
   end
 
+  def show
+    @articles = current_user.articles.order("updated_at DESC")
+  end
+
   def edit
     @user = User.find(params[:id])
   end

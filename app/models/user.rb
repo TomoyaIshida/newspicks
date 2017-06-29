@@ -6,5 +6,4 @@ class User < ApplicationRecord
   mount_uploader :image, ImagesUploader
 
   has_many :articles
-  has_many :articles, through: :users_articles
 end
