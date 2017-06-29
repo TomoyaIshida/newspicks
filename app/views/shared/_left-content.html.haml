@@ -7,7 +7,7 @@
           .left-content__top__main__image__data
             = image_tag(current_user.image, class: "user_image_left")
         .left-content__top__main__name
-          = current_user.name
+          = link_to current_user.name, user_path(current_user), id: 'mypage-left'
       - else
         .left-content__top__main__image
           = link_to new_user_registration_path do

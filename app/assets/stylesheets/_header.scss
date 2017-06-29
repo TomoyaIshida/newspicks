@@ -3,16 +3,18 @@ header{
   width: 100%;
   background-color: #15274D;
   position: fixed;
-  z-index: 1999;
+  z-index: 10;
   .header__bar{
     h1{
-    color: #fff;
     font-size: 20px;
     text-align: center;
     line-height: 50px;
     position: relative;
       a{
         text-decoration: none;
+      }
+      a:hover{
+        color: #fff;
       }
       a:link{
         color: #fff;
@@ -52,15 +54,20 @@ header{
   -webkit-border-radius: 2px;
   text-decoration: none;
 }
+
 #signup{
   height: 30px;
   font-size: 12px;
   text-align: center;
   cursor: pointer;
-  color: #fff;
+  color: #ccd4de;
   float: left;
   line-height: 30px;
   text-decoration: none;
+}
+
+#signup:hover{
+  color: #fff;
 }
 
 #logout{
@@ -69,14 +76,26 @@ header{
   line-height: 40px;
 }
 
+#logout:hover{
+  color: #fff;
+}
+
 #setting{
   text-decoration: none;
   margin-left: 10px;
   line-height: 40px;
 }
 
+#setting:hover{
+  color: #fff;
+}
+
 #mypage{
   text-decoration: none;
+}
+
+#mypage:hover{
+  color: #fff;
 }
 
 .fa-commenting-o{
@@ -91,6 +110,11 @@ header{
   bottom: 0;
   margin: auto;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.fa-commenting-o:hover{
+  color: #fff;
 }
 
 .user-image-top{
@@ -170,30 +194,3 @@ li:hover {
 .menu__second-level li {
   border-top: 1px solid #111;
 }
-
-// .init-bottom:after {
-//   content: '';
-//   display: inline-block;
-//   width: 6px;
-//   height: 6px;
-//   margin: 0 0 0 15px;
-//   border-right: 1px solid #fff;
-//   border-bottom: 1px solid #fff;
-//   -webkit-transform: rotate(45deg);
-//   -ms-transform: rotate(45deg);
-//   transform: rotate(45deg);
-// }
-
-// .menu:before,
-// .menu:after {
-//   content: " ";
-//   display: table;
-// }
-
-// .menu:after {
-//   clear: both;
-// }
-
-// .menu {
-//   *zoom: 1;
-// }

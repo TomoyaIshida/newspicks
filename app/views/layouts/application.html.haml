@@ -10,7 +10,7 @@
   %header
     .header__bar
       %h1
-        %a{href: '/'} NewsPicks
+        = link_to "NewsPicks", root_path
     - if user_signed_in?
       .user-image-top
         = image_tag(current_user.image, class: "user_image_top")
@@ -24,10 +24,17 @@
               %li
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, id: 'logout'
         .userinfo__post
-          = link_to edit_user_path(current_user) do
-            %i.fa.fa-commenting-o.fa-lg
+          %i.fa.fa-commenting-o.fa-lg.modal-open
     - else
       .userinfo
         = link_to "アカウント登録", new_user_registration_path, id: 'signup'
         = link_to "ログイン", new_user_session_path, id: 'login'
-    = yield
+  #modal-content
+    .modal-caption
+      %p URLを入力しておすすめの記事を共有しましょう
+    .field-input
+      %input#keyword.modal-form{placeholder: "URLを入力", type: "text"}
+    .modal-button
+      %p#modal-close.cancel-button キャンセル
+      = link_to "次へ", "", class: "next-page", id: "submit-url"
+  = yield
