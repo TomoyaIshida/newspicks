@@ -8,7 +8,6 @@ $(function(){
       url: '/articles',
       data: { content: url },
       dataType: 'html',
-      contentType: false,
     })
     .done(function() {
       console.log("done")

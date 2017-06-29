@@ -36,5 +36,5 @@
       %input#keyword.modal-form{placeholder: "URLを入力", type: "text"}
     .modal-button
       %p#modal-close.cancel-button キャンセル
-      = link_to "次へ", "user_path(current_user)", class: "next-page", id: "submit-url"
+      = link_to "次へ", user_path(current_user), class: "next-page", id: "submit-url"
   = yield

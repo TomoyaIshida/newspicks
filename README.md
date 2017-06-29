@@ -16,8 +16,6 @@
 
 * has_many:articles
 
-* has_many:articles, through: users_articles
-
 * has_many:comments
 
 * has_many:pics
@@ -36,9 +34,7 @@
 
 ### Association
 
-* has_many:users
-
-* has_many:users, through: users_articles
+* belongs_to:user
 
 * has_many:comments
 
@@ -48,45 +44,29 @@
 ## comments table
 
 
-|   Column   |      Type       |              Options            |
-|:----------:|:---------------:|:-------------------------------:|
-| user_id    | references:user |foreign_key: true, index: true   |
-| article_id | references:group|foreign_key: true, index: true   |
-| body       | text            |null:false                       |
+|   Column   |        Type       |              Options            |
+|:----------:|:-----------------:|:-------------------------------:|
+| user_id    | references:user   |foreign_key: true, index: true   |
+| article_id | references:article|foreign_key: true, index: true   |
+| body       | text              |null:false                       |
 
 ### Association
 
 * belongs_to:user
 
-* belongs_to:group
+* belongs_to:article
 
 
 ## pics table
 
 
-|   Column   |       Type      |            Options              |
-|:----------:|:---------------:|:-------------------------------:|
-| user_id    | references:user |foreign_key: true, index: true   |
-| article_id | references:group|foreign_key: true, index: true   |
+|   Column   |         Type      |            Options              |
+|:----------:|:-----------------:|:-------------------------------:|
+| user_id    | references:user   |foreign_key: true, index: true   |
+| article_id | references:article|foreign_key: true, index: true   |
 
 ### Association
 
 * belongs_to:user
 
 * belongs_to:article
-
-
-## users_articles table
-
-
-|   Column   |       Type      |            Options              |
-|:----------:|:---------------:|:-------------------------------:|
-| user_id    | references:user |foreign_key: true, index: true   |
-| article_id | references:group|foreign_key: true, index: true   |
-
-### Association
-
-* belongs_to:user
-
-* belongs_to:article
-
