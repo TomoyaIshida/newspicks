@@ -2,7 +2,6 @@ $(function(){
   $("#submit-url").on("click",function(e){
     e.preventDefault();
     var url = $("#keyword").val();
-    console.log(url)
     $.ajax({
       type: 'POST',
       url: '/articles',
@@ -11,7 +10,7 @@ $(function(){
     })
     .done(function() {
       console.log("done")
-      location.href = "/"
+      location.href = "/picks/new"
     })
     .fail(function() {
       console.log("fail")

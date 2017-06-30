@@ -1,0 +1,29 @@
+!!!
+.pickarea
+  - @articles.each do |article|
+    .pickarea__content
+      .pickarea__content__image
+        = image_tag(article.image, class: "news_image")
+      .pickarea__content__info
+        .pickarea__content__info__title
+          = article.title.truncate(30)
+        .pickarea__content__info__description
+          = article.description.truncate(93)
+      .pickarea__content__comment
+        .pickarea__content__comment__image
+          = image_tag(current_user.image, class: "user_image_left")
+        .pickarea__content__comment__text
+          多くの投資家がイニシャルコインオファリング多くの投資家がイニシャルコインオファリング
+      .pickarea__content__button
+        .pickarea__content__button__pick
+          Pick
+        .pickarea__content__button__comment
+          コメント
+    / #modal-comment-content
+    /   .modal-comment-caption
+    /     %p コメントを入力してください
+    /   .field-input
+    /     %input#keyword-comment.modal-comment-form{placeholder: "コメントを入力", type: "text"}
+    /   .modal-comment-button
+    /     %p#modal-comment-close.cancel-button キャンセル
+    /     = link_to "保存", "", class: "save-comment", id: "save-comment"
