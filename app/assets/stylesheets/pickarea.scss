@@ -16,6 +16,7 @@
       height: 190px;
       width: 400px;
       margin: 0 auto;
+      margin-top: 10px;
     }
     &__info{
       height: 150px;
@@ -25,17 +26,17 @@
       margin: 0 auto;
       &__title{
         height: 70px;
-        width: 360px;
+        width: 390px;
         font-size: 20px;
-        padding: 0 20px;
         font-weight: bold;
         margin-top: 10px;
+        padding: 0 5px;
       }
       &__description{
         height: 70px;
-        width: 360px;
+        width: 390px;
         font-size: 14px;
-        padding: 0 20px;
+        padding: 0 5px;
       }
     }
     &__comment{
@@ -43,7 +44,7 @@
       height: 90px;
       padding: 0 20px;
       margin: 0 auto;
-      margin-top: 5px;
+      margin-top: 10px;
       font-size: 15px;
       &__image{
         height: 48px;
@@ -63,7 +64,7 @@
       height: 60px;
       width: 360px;
       margin: 0 auto;
-      padding-top: 20px;
+      padding-top: 10px;
       &__comment{
         height: 40px;
         width: 79px;
@@ -80,20 +81,34 @@
         color: #fff;
       }
       &__pick{
-        height: 40px;
-        width: 79px;
-        background-color: #15274D;
         float: right;
-        margin-left: 20px;
-        color: #ccd4de;
-        text-align: center;
-        line-height: 40px;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-      &__pick:hover{
-        color: #fff;
       }
     }
   }
+}
+
+.comment-field{
+  height: 40px;
+  width: 100%;
+  margin-top: 13px;
+  margin-left: 5px;
+}
+
+.pick-button{
+  display: inline-block;
+  height: 45px;
+  padding: 0 25px;
+  line-height: 45px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #15274D;
+  color: #ccd4de;
+  font-size: 17px;
+}
+
+.pick-button:hover{
+  color: #fff;
 }

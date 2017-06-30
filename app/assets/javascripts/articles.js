@@ -6,11 +6,12 @@ $(function(){
       type: 'POST',
       url: '/articles',
       data: { content: url },
-      dataType: 'html',
+      dataType: 'json',
     })
-    .done(function() {
+    .done(function(data) {
       console.log("done")
-      location.href = "/picks/new"
+      // location.href = "/picks/new"
+      location.href = "/articles/" + data.article_id + "/picks/new"
     })
     .fail(function() {
       console.log("fail")

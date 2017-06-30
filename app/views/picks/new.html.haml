@@ -6,19 +6,19 @@
         = image_tag(article.image, class: "news_image")
       .pickarea__content__info
         .pickarea__content__info__title
-          = article.title.truncate(30)
+          = article.title.truncate(40)
         .pickarea__content__info__description
-          = article.description.truncate(93)
-      .pickarea__content__comment
-        .pickarea__content__comment__image
-          = image_tag(current_user.image, class: "user_image_left")
-        .pickarea__content__comment__text
-          多くの投資家がイニシャルコインオファリング多くの投資家がイニシャルコインオファリング
-      .pickarea__content__button
-        .pickarea__content__button__pick
-          Pick
-        .pickarea__content__button__comment
-          コメント
+          = article.description.truncate(98)
+      = form_for [@article, @pick] do |f| 
+        = f.fields_for :comments do |b| 
+          .pickarea__content__comment
+            .pickarea__content__comment__image
+              = image_tag(current_user.image, class: "user_image_left")
+            .pickarea__content__comment__text
+              = b.text_field :body, placeholder: "コメントを書く（任意）", class: "comment-field"
+          .pickarea__content__button
+            .pickarea__content__button__pick
+              = f.submit "Pick", class: "pick-button"
     / #modal-comment-content
     /   .modal-comment-caption
     /     %p コメントを入力してください
