@@ -18,7 +18,7 @@
 
 * has_many:comments
 
-* has_many:pics
+* has_many:picks
 
 
 ## articles table
@@ -36,9 +36,7 @@
 
 * belongs_to:user
 
-* has_many:comments
-
-* has_many:pics
+* has_many:picks
 
 
 ## comments table
@@ -47,17 +45,17 @@
 |   Column   |        Type       |              Options            |
 |:----------:|:-----------------:|:-------------------------------:|
 | user_id    | references:user   |foreign_key: true, index: true   |
-| article_id | references:article|foreign_key: true, index: true   |
+| pick_id    | references:pick   |foreign_key: true, index: true   |
 | body       | text              |null:false                       |
 
 ### Association
 
 * belongs_to:user
 
-* belongs_to:article
+* belongs_to:pick
 
 
-## pics table
+## picks table
 
 
 |   Column   |         Type      |            Options              |
@@ -70,3 +68,5 @@
 * belongs_to:user
 
 * belongs_to:article
+
+* has_many:picks
