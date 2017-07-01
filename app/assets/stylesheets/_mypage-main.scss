@@ -8,7 +8,6 @@
     background-color: #F5F5F5;
     margin: 30px 183px;
     width: 77%;
-    background-color: red;
   }
 }
 
@@ -16,4 +15,13 @@
   height: 33px;
   width: 33px;
   border-radius: 33px;
+}
+
+.show-news-link{
+  text-decoration: none;
+  color: #000;
+}
+
+.show-news-link:hover{
+  color: #37509C;
 }
