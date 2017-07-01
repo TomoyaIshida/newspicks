@@ -1,7 +1,5 @@
 class ArticlesController < ApplicationController
 
-  require 'mechanize'
-
   def index
     @articles = Article.order("updated_at DESC").limit(20)
   end

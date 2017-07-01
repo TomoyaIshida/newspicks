@@ -1,29 +1,21 @@
 !!!
 .pickarea
-  - @articles.each do |article|
-    .pickarea__content
-      .pickarea__content__image
-        = image_tag(article.image, class: "news_image")
-      .pickarea__content__info
-        .pickarea__content__info__title
-          = article.title.truncate(40)
-        .pickarea__content__info__description
-          = article.description.truncate(98)
-      = form_for [@article, @pick] do |f| 
-        = f.fields_for :comments do |b| 
-          .pickarea__content__comment
-            .pickarea__content__comment__image
-              = image_tag(current_user.image, class: "user_image_left")
-            .pickarea__content__comment__text
-              = b.text_field :body, placeholder: "コメントを書く（任意）", class: "comment-field"
-          .pickarea__content__button
-            .pickarea__content__button__pick
-              = f.submit "Pick", class: "pick-button"
-    / #modal-comment-content
-    /   .modal-comment-caption
-    /     %p コメントを入力してください
-    /   .field-input
-    /     %input#keyword-comment.modal-comment-form{placeholder: "コメントを入力", type: "text"}
-    /   .modal-comment-button
-    /     %p#modal-comment-close.cancel-button キャンセル
-    /     = link_to "保存", "", class: "save-comment", id: "save-comment"
+  .pickarea__content
+    .pickarea__content__image
+      = image_tag(@article.image, class: "news_image")
+    .pickarea__content__info
+      .pickarea__content__info__title
+        = @article.title.truncate(40)
+      .pickarea__content__info__description
+        = @article.description.truncate(98)
+    = form_for [@article, @pick] do |f| 
+      = f.fields_for :comments do |b| 
+        .pickarea__content__comment
+          .pickarea__content__comment__image
+            = image_tag(current_user.image, class: "user_image_left")
+          .pickarea__content__comment__text
+            = b.text_field :body, placeholder: "コメントを書く（任意）", class: "comment-field"
+          = b.hidden_field :user_id, value: current_user.id
+        .pickarea__content__button
+          .pickarea__content__button__pick
+            = f.submit "Pick", class: "pick-button"

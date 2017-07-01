@@ -4,22 +4,23 @@ class PicksController < ApplicationController
     @pick = Pick.new
     @pick.comments.build
     @article = Article.find(article_params)
-    # @pick = current_user.pick.new(article)
-    @articles = current_user.articles.order("updated_at DESC")
-    # @articles = article.picks.order("updated_at DESC")
   end
 
   def create
-    @pick = Pick.new(pick_params)
-    @pick.save
-    redirect_to root_path
+    @pick = current_user.picks.new(pick_params)
+    if @pick.save
+      redirect_to root_path
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   private
   def article_params
     params.require(:article_id)
   end
+
   def pick_params
-    params.require(:pick).permit(comments_attributes: [:body])
+    params.require(:pick).permit(comments_attributes: [:body, :user_id]).merge(article_id: params[:article_id])
   end
 end
