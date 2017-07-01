@@ -7,11 +7,11 @@ class PicksController < ApplicationController
   end
 
   def create
-    @pick = current_user.picks.new(pick_params)
+  @pick = current_user.picks.new(pick_params)
     if @pick.save
       redirect_to root_path
     else
-      redirect_to user_path(current_user)
+      redirect_to new_article_pick_path(@article.id)
     end
   end
 

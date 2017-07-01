@@ -1,15 +1,13 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.order("updated_at DESC").limit(20)
+    @picks = Pick.all.order("updated_at DESC").limit(20)
   end
 
   def create
     @article = Article.new(article_params)
     if @article.save
-      # render nothing: true
       respond_to do |format|
-        # format.html redirect_to root_path
         format.json
       end
     else
