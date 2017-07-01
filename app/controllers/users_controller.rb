@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = current_user.articles.order("updated_at DESC")
+    @picks = current_user.picks.order("updated_at DESC")
   end
 
   def edit

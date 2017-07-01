@@ -1,9 +1,9 @@
 !!!
 .main-content__left
-  - @articles.each do |article|
+  - @picks.each do |pick|
     .main-content__left__news
       .main-content__left__news__top
-        = image_tag(article.image, class: "news_image")
+        = image_tag(pick.article.image, class: "news_image")
         .main-content__left__news__top__picks
           .main-content__left__news__top__picks__count
             137
@@ -11,20 +11,21 @@
             Picks
       .main-content__left__news__titlebox
         .main-content__left__news__titlebox__title
-          = article.title.truncate(30)
+          = link_to pick.article.title.truncate(30), article_pick_path(pick.article.id, pick.id), class: "show-news-link"
       .main-content__left__news__data
         .main-content__left__news__data__image
-          = image_tag(article.user.image, class: "user_image_content")
+          = image_tag(pick.user.image, class: "user_image_content")
         .main-content__left__news__data__info
           .main-content__left__news__data__info__name
-            = article.user.name
+            = pick.user.name
           .main-content__left__news__data__info__company
-            = article.user.company
+            = pick.user.company
       .main-content__left__news__commentbox
         .main-content__left__news__commentbox__comment
-          フロント画面実装中だよ。
+          - pick.comments.each do |comment|
+            = comment.body
       .main-content__left__news__bottom
         .main-content__left__news__bottom__sitename
-          = article.sitename
+          = pick.article.sitename
         .main-content__left__news__bottom__time
-          = article.updated_at.strftime("%Y/%m/%d %H:%M")
+          = pick.article.updated_at.strftime("%Y/%m/%d %H:%M")

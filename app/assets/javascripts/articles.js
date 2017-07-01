@@ -2,16 +2,15 @@ $(function(){
   $("#submit-url").on("click",function(e){
     e.preventDefault();
     var url = $("#keyword").val();
-    console.log(url)
     $.ajax({
       type: 'POST',
       url: '/articles',
       data: { content: url },
-      dataType: 'html',
+      dataType: 'json',
     })
-    .done(function() {
+    .done(function(data) {
       console.log("done")
-      location.href = "/"
+      location.href = "/articles/" + data.article_id + "/picks/new"
     })
     .fail(function() {
       console.log("fail")
