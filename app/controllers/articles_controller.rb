@@ -1,23 +1,24 @@
 class ArticlesController < ApplicationController
 
   def index
-    @picks = Pick.all.order("updated_at DESC").limit(20)
+    @articles = Article.all.order("updated_at DESC").limit(20)
   end
 
   def create
-    @article = Article.find_by('url LIKE(?)', "%#{params[:content]}%")
-    if @article.url == params[:content]
-      respond_to do |format|
-        format.json
-      end
-    else
-      @article = Article.new(article_params)
-      if @article.save
+    if  @article = Article.find_by('url LIKE(?)', "%#{params[:content]}%")
+      if@article.url == params[:content]
         respond_to do |format|
           format.json
         end
       else
-        render :index
+        @article = Article.new(article_params)
+        if @article.save
+          respond_to do |format|
+            format.json
+          end
+        else
+          render :index
+        end
       end
     end
   end

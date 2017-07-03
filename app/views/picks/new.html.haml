@@ -9,13 +9,11 @@
       .pickarea__content__info__description
         = @article.description.truncate(98)
     = form_for [@article, @pick] do |f| 
-      = f.fields_for :comments do |b| 
-        .pickarea__content__comment
-          .pickarea__content__comment__image
-            = image_tag(current_user.image, class: "user_image_left")
-          .pickarea__content__comment__text
-            = b.text_field :body, placeholder: "コメントを書く（任意）", class: "comment-field"
-          = b.hidden_field :user_id, value: current_user.id
-        .pickarea__content__button
-          .pickarea__content__button__pick
-            = f.submit "Pick", class: "pick-button"
+      .pickarea__content__comment
+        .pickarea__content__comment__image
+          = image_tag(current_user.image, class: "user_image_left")
+        .pickarea__content__comment__text
+          = f.text_field :text, placeholder: "コメントを書く（任意）", class: "comment-field"
+      .pickarea__content__button
+        .pickarea__content__button__pick
+          = f.submit "Pick", class: "pick-button"

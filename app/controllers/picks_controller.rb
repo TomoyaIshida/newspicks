@@ -2,7 +2,6 @@ class PicksController < ApplicationController
 
   def new
     @pick = Pick.new
-    @pick.comments.build
     @article = Article.find(article_params)
   end
 
@@ -25,6 +24,6 @@ class PicksController < ApplicationController
   end
 
   def pick_params
-    params.require(:pick).permit(comments_attributes: [:body, :user_id]).merge(article_id: params[:article_id])
+    params.require(:pick).permit(:text).merge(article_id: params[:article_id])
   end
 end

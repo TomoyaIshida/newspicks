@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   root 'articles#index'
   resources :users, only: [:index, :edit, :update, :show]
   resources :articles, only: [:index, :create] do
-    resources :picks, only: [:new, :create, :show, :edit] do
-      resources :comments, only: [:create]
-    end
+    resources :picks, only: [:new, :create, :show, :edit]
   end
 end
