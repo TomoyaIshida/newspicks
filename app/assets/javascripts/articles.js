@@ -9,11 +9,9 @@ $(function(){
       dataType: 'json',
     })
     .done(function(data) {
-      console.log("done")
       location.href = "/articles/" + data.article_id + "/picks/new"
     })
     .fail(function() {
-      console.log("fail")
       alert('投稿できないURLのようです。プロトタイプのためお許しください。');
     })
   });

@@ -5,13 +5,20 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    if @article.save
+    @article = Article.find_by('url LIKE(?)', "%#{params[:content]}%")
+    if @article.url == params[:content]
       respond_to do |format|
         format.json
       end
     else
-      render :index
+      @article = Article.new(article_params)
+      if @article.save
+        respond_to do |format|
+          format.json
+        end
+      else
+        render :index
+      end
     end
   end
 

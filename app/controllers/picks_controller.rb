@@ -16,7 +16,6 @@ class PicksController < ApplicationController
   end
 
   def show
-    # binding.pry
     @picks = Pick.find(params[:id])
   end
 
