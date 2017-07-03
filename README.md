@@ -14,9 +14,7 @@
 
 ### Association
 
-* has_many:articles
-
-* has_many:comments
+* has_many:articles, through: :picks
 
 * has_many:picks
 
@@ -34,39 +32,22 @@
 
 ### Association
 
-* belongs_to:user
+* has_many:users, through: :picks
 
 * has_many:picks
 
 
-## comments table
-
-
-|   Column   |        Type       |              Options            |
-|:----------:|:-----------------:|:-------------------------------:|
-| user_id    | references:user   |foreign_key: true, index: true   |
-| pick_id    | references:pick   |foreign_key: true, index: true   |
-| body       | text              |null:false                       |
-
-### Association
-
-* belongs_to:user
-
-* belongs_to:pick
-
-
-## picks table
+## picks table(中間テーブル)
 
 
 |   Column   |         Type      |            Options              |
 |:----------:|:-----------------:|:-------------------------------:|
 | user_id    | references:user   |foreign_key: true, index: true   |
 | article_id | references:article|foreign_key: true, index: true   |
+| text       | string            |null:false                       |
 
 ### Association
 
 * belongs_to:user
 
 * belongs_to:article
-
-* has_many:picks

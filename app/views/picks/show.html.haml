@@ -9,7 +9,7 @@
       .show-content__news__image
         = image_tag(@picks.article.image, class: "show-news-image")
       .show-content__news__title
-        = @picks.article.title.truncate(27)
+        = @picks.article.title.truncate(25)
       .show-content__news__info
         .show-content__news__info__sitename
           = @picks.article.sitename
@@ -20,7 +20,7 @@
     .show-content__comment
       .show-content__comment__postbox
         .show-content__comment__postbox__image
-          = image_tag(current_user.image, class: "user_image_left")
+          = image_tag(current_user.image, class: "show-comment-image")
         .show-content__comment__postbox__form
         .show-content__comment__postbox__pick
           pick

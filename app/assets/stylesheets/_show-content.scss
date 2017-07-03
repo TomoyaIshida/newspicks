@@ -105,21 +105,18 @@
     }
   }
   &__textarea{
-    height: 100%;
     width: 628px;
-    background-color: red;
-    padding-top: 20px;
+    padding:20px 0;
+    border-bottom: 1px solid #eee;
     &__userinfo{
       height: 50px;
       width: 588px;
-      margin: 0 20px;
-      background-color: blue;
+      margin: 0 25px;
       &__cap{
         height: 50px;
         width: 500px;
         float: left;
         margin-left: 10px;
-        background-color: green;
         &__name{
           font-size: 15px;
           margin-top: 5px;
@@ -130,6 +127,11 @@
           color: #999;
         }
       }
+    }
+    &__comment{
+      width: 533px;
+      margin-left: 75px;
+      margin-top: 10px;
     }
   }
 }
