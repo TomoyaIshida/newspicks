@@ -11,12 +11,14 @@
             Picks
       .main-content__left__news__titlebox
         .main-content__left__news__titlebox__title
-          = link_to article.title.truncate(26), "", class: "show-news-link"
-          / = link_to article.title.truncate(26), article_pick_path(article.id, article.picks.id), class: "show-news-link"
+          = link_to article.title.truncate(26), article_path(article.id), class: "show-news-link"
       - article.picks.last(1).each do |pick|
         .main-content__left__news__data
           .main-content__left__news__data__image
-            = image_tag(pick.user.image, class: "user_image_content")
+            - if pick.user.image.blank?
+              %i.fa.fa-user-circle.fa-2x.news_userimage
+            - else
+              = image_tag(pick.user.image, class: "user_image_content")
           .main-content__left__news__data__info
             .main-content__left__news__data__info__name
               = pick.user.name
@@ -24,7 +26,7 @@
               = pick.user.company
         .main-content__left__news__commentbox
           .main-content__left__news__commentbox__comment
-            = pick.text
+            = pickfront(pick)
         .main-content__left__news__bottom
           .main-content__left__news__bottom__sitename
             = article.sitename

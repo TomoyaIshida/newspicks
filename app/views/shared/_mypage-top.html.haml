@@ -2,7 +2,10 @@
 .mypage__top
   .mypage__top__user-area
     .mypage__top__user-area__image
-      = image_tag(current_user.image, class: "user_image_mypage")
+      - if current_user.image.blank?
+        %i.fa.fa-user-circle.fa-4x.mypage_userimage
+      - else
+        = image_tag(current_user.image, class: "user_image_mypage")
     .mypage__top__user-area__info
       .mypage__top__user-area__info__name
         = current_user.name

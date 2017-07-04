@@ -14,10 +14,6 @@ class PicksController < ApplicationController
       end
   end
 
-  def show
-    @picks = Pick.find(params[:id])
-  end
-
   private
   def article_params
     params.require(:article_id)

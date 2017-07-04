@@ -75,7 +75,6 @@
     width: 628px;
     border-bottom: 1px solid #eee;
     &__image{
-      background-color: blue;
       height: 48px;
       width: 48px;
       float: left;
@@ -105,8 +104,9 @@
     }
   }
   &__textarea{
+    height: 10%;
     width: 628px;
-    padding:20px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #eee;
     &__userinfo{
       height: 50px;
@@ -123,15 +123,15 @@
           font-weight: bold;
         }
         &__company{
-          font-size: 13px;
+          font-size: 11px;
           color: #999;
+          margin-top: 3px;
+          margin-bottom: 10px;
+        }
+        &__comment{
+          width: 533px;
         }
       }
-    }
-    &__comment{
-      width: 533px;
-      margin-left: 75px;
-      margin-top: 10px;
     }
   }
 }

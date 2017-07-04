@@ -220,7 +220,7 @@
   line-height: 30px;
 }
 
-i{
+.current_user_image_left{
   float: right;
   line-height: 100px;
   margin-left: 10px;
@@ -243,4 +243,13 @@ i{
 #mypage-left{
   text-decoration: none;
   color: #000;
+}
+
+.left_image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }

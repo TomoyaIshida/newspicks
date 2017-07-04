@@ -5,13 +5,16 @@
       - if user_signed_in?
         .left-content__top__main__image
           .left-content__top__main__image__data
-            = image_tag(current_user.image, class: "user_image_left")
+            - if current_user.image.blank?
+              %i.fa.fa-user-circle-o.fa-3x.left_image
+            - else
+              = image_tag(current_user.image, class: "user_image_left")
         .left-content__top__main__name
           = link_to current_user.name, user_path(current_user), id: 'mypage-left'
       - else
         .left-content__top__main__image
           = link_to new_user_registration_path do
-            %i.fa.fa-address-card-o.fa-3x
+            %i.fa.fa-address-card-o.fa-3x.current_user_image_left
         .left-content__top__main__name
           .left-content__top__main__name__signup
           = link_to "アカウントを作成する", new_user_registration_path, id: "signup-left"
