@@ -147,6 +147,9 @@
   width: 100%;
 }
 
+.news_pick_userimage{
+  float: left;
+}
 .news-link-button{
   line-height: 50px;
   color: #15274D;
@@ -166,8 +169,8 @@
 }
 
 .show-comment-image{
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   border-radius: 40px;
   margin-top: 5px;
   float: left;

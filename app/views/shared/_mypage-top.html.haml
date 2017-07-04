@@ -1,19 +1,20 @@
 !!!
 .mypage__top
   .mypage__top__user-area
-    .mypage__top__user-area__image
-      - if current_user.image.blank?
-        %i.fa.fa-user-circle.fa-4x.mypage_userimage
-      - else
-        = image_tag(current_user.image, class: "user_image_mypage")
-    .mypage__top__user-area__info
-      .mypage__top__user-area__info__name
-        = current_user.name
-      .mypage__top__user-area__info__like
-        .mypage__top__user-area__info__like__caption
-          総 Like 数:
-        .mypage__top__user-area__info__like__count
-          27
+    - @users.picks.last(1).each do |pick|
+      .mypage__top__user-area__image
+        - if pick.user.image.blank?
+          %i.fa.fa-user-circle.fa-4x.mypage_userimage
+        - else
+          = image_tag(pick.user.image, class: "user_image_mypage")
+      .mypage__top__user-area__info
+        .mypage__top__user-area__info__name
+          = pick.user.name
+        .mypage__top__user-area__info__like
+          .mypage__top__user-area__info__like__caption
+            総 Like 数:
+          .mypage__top__user-area__info__like__count
+            27
   .mypage__top__info-area
     .mypage__top__info-area__pickbox
       .mypage__top__info-area__pickbox__picks

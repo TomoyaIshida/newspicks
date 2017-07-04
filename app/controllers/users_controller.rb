@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @picks = current_user.picks.order("updated_at DESC")
+    @users = User.find(params[:id])
+    @picks = @users.picks.order("updated_at DESC")
   end
 
   def edit

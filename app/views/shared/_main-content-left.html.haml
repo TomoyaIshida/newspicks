@@ -21,7 +21,7 @@
               = image_tag(pick.user.image, class: "user_image_content")
           .main-content__left__news__data__info
             .main-content__left__news__data__info__name
-              = pick.user.name
+              = link_to pick.user.name, user_path(pick.user.id), class: "user_news_link"
             .main-content__left__news__data__info__company
               = pick.user.company
         .main-content__left__news__commentbox
