@@ -3,7 +3,7 @@
   .main-content__right__titlearea
     .main-content__right__titlearea__title
       新着ニュース
-  - @articles.last(9).each do |article|
+  - @articles.first(8).each do |article|
     .main-content__right__news
       .main-content__right__news__title
         = link_to article.title.truncate(30), article_path(article.id), class: "show-news-link"

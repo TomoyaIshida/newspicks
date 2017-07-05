@@ -6,12 +6,22 @@ class PicksController < ApplicationController
   end
 
   def create
-    @pick = current_user.picks.new(pick_params)
+    if @pick = Pick.where(user_id: current_user.id, article_id: params[:article_id]).first_or_initialize
+       @pick.update_attributes(text: params[:pick][:text])
+       redirect_to root_path
+    else
+      @pick = current_user.picks.new(pick_params)
       if @pick.save
         redirect_to root_path
       else
         redirect_to new_article_pick_path(@article.id)
       end
+    end
+  end
+
+  def update
+    pick = Pick.find(params[:id])
+    pick.update(pick_update_params) if pick.user_id == current_user.id
   end
 
   private
@@ -22,4 +32,5 @@ class PicksController < ApplicationController
   def pick_params
     params.require(:pick).permit(:text).merge(article_id: params[:article_id])
   end
+
 end

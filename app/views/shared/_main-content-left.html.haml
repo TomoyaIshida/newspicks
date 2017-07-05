@@ -6,7 +6,7 @@
         = image_tag(article.image, class: "news_image")
         .main-content__left__news__top__picks
           .main-content__left__news__top__picks__count
-            137
+            = article.picks.length
           .main-content__left__news__top__picks__caption
             Picks
       .main-content__left__news__titlebox

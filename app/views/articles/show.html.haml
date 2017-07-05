@@ -24,10 +24,12 @@
             - if current_user.image.blank?
               %i.fa.fa-user-circle.fa-3x.news_userimage
             - else
-              = image_tag(current_user.image, class: "show-comment-image")
+              = image_tag(current_user.image, class: "show-form-image")
+        = form_for [@article, @pick] do |f| 
           .show-content__comment__postbox__form
+            = f.text_field :text, placeholder: "コメントを書く（任意）", class: "comment-field-show"
           .show-content__comment__postbox__pick
-            pick
+            = f.submit "Pick", class: "pick-button-show"
       - @articles.picks.each do |pick|
         .show-content__comment__textarea
           .show-content__comment__textarea__userinfo
