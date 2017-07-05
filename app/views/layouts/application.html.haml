@@ -13,7 +13,10 @@
         = link_to "NewsPicks", root_path
     - if user_signed_in?
       .user-image-top
-        = image_tag(current_user.image, class: "user_image_top")
+        - if current_user.image.blank?
+          %i.fa.fa-user-circle.fa-2x.header_image
+        - else
+          = image_tag(current_user.image, class: "user_image_top")
       .userinfo
         %ul.menu
           %li.menu__single

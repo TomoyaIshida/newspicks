@@ -22,13 +22,13 @@
 ## articles table
 
 
-|   Column   |       Type      |            Options              |
-|:----------:|:---------------:|:-------------------------------:|
-| sitename   | string          |null:false                       |
-| url        | string          |null:false                       |
-| titile     | string          |null:false                       |
-| description| text            |null:false                       |
-| image      | string          |null:false                       |
+|   Column   |       Type      |               Options               |
+|:----------:|:---------------:|:-----------------------------------:|
+| sitename   | string          |null:false                           |
+| url        | string          |index: true, null: false, unique:true|
+| titile     | string          |null:false                           |
+| description| text            |null:false                           |
+| image      | string          |null:false                           |
 
 ### Association
 
@@ -37,7 +37,7 @@
 * has_many:picks
 
 
-## picks table(中間テーブル)
+## picks table
 
 
 |   Column   |         Type      |            Options              |

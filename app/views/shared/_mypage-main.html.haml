@@ -5,26 +5,28 @@
       .main-content__left__news
         .main-content__left__news__top
           = image_tag(pick.article.image, class: "news_image")
-          .main-content__left__news__top__picks
-            .main-content__left__news__top__picks__count
-              137
-            .main-content__left__news__top__picks__caption
-              Picks
+          / .main-content__left__news__top__picks
+          /   .main-content__left__news__top__picks__count
+          /     = @picks.length
+          /   .main-content__left__news__top__picks__caption
+          /     Picks
         .main-content__left__news__titlebox
           .main-content__left__news__titlebox__title
-            = link_to pick.article.title.truncate(30), article_pick_path(pick.article.id, pick.id), class: "show-news-link"
+            = link_to pick.article.title.truncate(26), article_path(pick.article.id), class: "show-news-link"
         .main-content__left__news__data
           .main-content__left__news__data__image
-            = image_tag(current_user.image, class: "user_image_content")
+            - if pick.user.image.blank?
+              %i.fa.fa-user-circle.fa-2x.news_userimage
+            - else
+              = image_tag(pick.user.image, class: "user_image_content")
           .main-content__left__news__data__info
             .main-content__left__news__data__info__name
-              = current_user.name
+              = pick.user.name
             .main-content__left__news__data__info__company
-              = current_user.company
+              = pick.user.company
         .main-content__left__news__commentbox
           .main-content__left__news__commentbox__comment
-            - pick.comments.each do |comment|
-              = comment.body
+            = pickinfo(pick)
         .main-content__left__news__bottom
           .main-content__left__news__bottom__sitename
             = pick.article.sitename

@@ -1,4 +1,4 @@
 class Article < ApplicationRecord
-  belongs_to :user
-  has_one :pick
+  has_many :users, through: :picks
+  has_many :picks
 end

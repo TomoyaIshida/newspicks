@@ -1,0 +1,47 @@
+!!!
+.content
+  = render 'shared/left-content'
+  .main-content
+    .show-content__top
+      .show-content__top__username
+        = link_to "総合トップ", root_path, class: "mypage-link"
+    .show-content__news
+      .show-content__news__image
+        = image_tag(@articles.image, class: "show-news-image")
+      .show-content__news__title
+        = @articles.title.truncate(25)
+      .show-content__news__info
+        .show-content__news__info__sitename
+          = @articles.sitename
+        .show-content__news__info__time
+          = @articles.updated_at.strftime("%Y/%m/%d %H:%M")
+      .show-content__news__link
+        = link_to "続きを読む", @articles.url, class: "news-link-button"
+    .show-content__comment
+      .show-content__comment__postbox
+        - if user_signed_in?
+          .show-content__comment__postbox__image
+            - if current_user.image.blank?
+              %i.fa.fa-user-circle.fa-3x.news_userimage
+            - else
+              = image_tag(current_user.image, class: "show-form-image")
+        = form_for [@article, @pick] do |f| 
+          .show-content__comment__postbox__form
+            = f.text_field :text, placeholder: "コメントを書く（任意）", class: "comment-field-show"
+          .show-content__comment__postbox__pick
+            = f.submit "Pick", class: "pick-button-show"
+      - @articles.picks.each do |pick|
+        .show-content__comment__textarea
+          .show-content__comment__textarea__userinfo
+            .show-content__comment__textarea__userinfo__image
+              - if pick.user.image.blank?
+                %i.fa.fa-user-circle.fa-2x.news_pick_userimage
+              - else
+                = image_tag(pick.user.image, class: "show-comment-image")
+            .show-content__comment__textarea__userinfo__cap
+              .show-content__comment__textarea__userinfo__cap__name
+                = pick.user.name
+              .show-content__comment__textarea__userinfo__cap__company
+                = pick.user.company
+              .show-content__comment__textarea__userinfo__cap__comment
+                = pickfront(pick)
