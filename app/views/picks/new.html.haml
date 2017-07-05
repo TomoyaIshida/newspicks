@@ -11,7 +11,10 @@
     = form_for [@article, @pick] do |f| 
       .pickarea__content__comment
         .pickarea__content__comment__image
-          = image_tag(current_user.image, class: "user_image_left")
+          - if current_user.image.blank?
+            %i.fa.fa-user-circle.fa-3x.news_userimage
+          - else
+            = image_tag(current_user.image, class: "user_image_left")
         .pickarea__content__comment__text
           = f.text_field :text, placeholder: "コメントを書く（任意）", class: "comment-field"
       .pickarea__content__button

@@ -5,11 +5,11 @@
       .main-content__left__news
         .main-content__left__news__top
           = image_tag(pick.article.image, class: "news_image")
-          .main-content__left__news__top__picks
-            .main-content__left__news__top__picks__count
-              = @picks.length
-            .main-content__left__news__top__picks__caption
-              Picks
+          / .main-content__left__news__top__picks
+          /   .main-content__left__news__top__picks__count
+          /     = @picks.length
+          /   .main-content__left__news__top__picks__caption
+          /     Picks
         .main-content__left__news__titlebox
           .main-content__left__news__titlebox__title
             = link_to pick.article.title.truncate(26), article_path(pick.article.id), class: "show-news-link"

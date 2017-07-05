@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def show
     @users = User.find(params[:id])
     @picks = @users.picks.order("updated_at DESC")
-    @articles = @users.articles.order("updated_at DESC")
   end
 
   def edit
