@@ -51,3 +51,18 @@
 * belongs_to:user
 
 * belongs_to:article
+
+
+## likes table
+
+
+|   Column   |         Type      |            Options              |
+|:----------:|:-----------------:|:-------------------------------:|
+| user_id    | references:user   |foreign_key: true, index: true   |
+| pick_id    | references:pick   |foreign_key: true, index: true   |
+
+### Association
+
+* belongs_to:user
+
+* belongs_to:article
