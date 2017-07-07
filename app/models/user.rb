@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :articles, through: :picks
   has_many :picks
+
+  validates :name, presence: true
 end
