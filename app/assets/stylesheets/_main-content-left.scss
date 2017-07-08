@@ -128,8 +128,6 @@
 }
 
 .news_image{
-  // height: 144px;
-  // width: 344px;
   height: 100%;
   width: 100%;
 }
@@ -143,4 +141,12 @@
 .user_news_link{
   text-decoration: none;
   color: #000;
+}
+
+.read-description{
+  color: #999;
+  width: 324px;
+  padding: 0 10px;
+  height: 100px;
+  font-size: 15px;
 }

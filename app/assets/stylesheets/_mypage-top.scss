@@ -13,6 +13,7 @@
     bottom: 0;
     margin: auto;
     float: left;
+    margin-top: 100px;
     &__image{
       height: 80px;
       width: 80px;
@@ -57,9 +58,10 @@
   &__info-area{
     height: 55px;
     width: 100%;
-    margin-top: 141px;
+    margin-top: 140px;
     float: left;
     border-top: 1px solid #eee;
+    border-bottom: 4px solid #15274D;
     &__pickbox{
       height: 55px;
       width: 385px;

@@ -18,6 +18,8 @@
 
 * has_many:picks
 
+* has_many:reads
+
 
 ## articles table
 
@@ -36,6 +38,7 @@
 
 * has_many:picks
 
+* has_manuy:reads
 
 ## picks table
 
@@ -53,13 +56,13 @@
 * belongs_to:article
 
 
-## likes table
+## reads table
 
 
 |   Column   |         Type      |            Options              |
 |:----------:|:-----------------:|:-------------------------------:|
 | user_id    | references:user   |foreign_key: true, index: true   |
-| pick_id    | references:pick   |foreign_key: true, index: true   |
+| article_id | references:article|foreign_key: true, index: true   |
 
 ### Association
 
