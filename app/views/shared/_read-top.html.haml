@@ -1,0 +1,32 @@
+!!!
+.mypage__top
+  .mypage__top__user-area
+    .mypage__top__user-area__image
+      - if current_user.image.blank?
+        %i.fa.fa-user-circle.fa-4x.mypage_userimage
+      - else
+        = image_tag(current_user.image, class: "user_image_mypage")
+    .mypage__top__user-area__info
+      .mypage__top__user-area__info__name
+        = current_user.name
+      .mypage__top__user-area__info__like
+        .mypage__top__user-area__info__like__caption
+          総 Like 数:
+        .mypage__top__user-area__info__like__count
+          27
+  .mypage__top__info-area
+    .mypage__top__info-area__pickbox
+      .mypage__top__info-area__pickbox__picks
+        Picks
+      .mypage__top__info-area__pickbox__follow
+        .mypage__top__info-area__pickbox__follow__count
+          437
+        .mypage__top__info-area__pickbox__follow__caption
+          フォロー
+      .mypage__top__info-area__pickbox__follower
+        .mypage__top__info-area__pickbox__follower__count
+          502
+        .mypage__top__info-area__pickbox__follower__caption
+          フォロワー
+    .mypage__top__info-area__searchbox
+      自分のPickを検索

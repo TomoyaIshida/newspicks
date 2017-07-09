@@ -7,4 +7,9 @@ class User < ApplicationRecord
 
   has_many :articles, through: :picks
   has_many :picks
+
+  has_many :articles, through: :reads
+  has_many :reads
+
+  validates :name, presence: true
 end

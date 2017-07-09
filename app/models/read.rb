@@ -1,4 +1,4 @@
-class Pick < ApplicationRecord
+class Read < ApplicationRecord
   belongs_to :article
   belongs_to :user
 

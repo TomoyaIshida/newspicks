@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706095558) do
+ActiveRecord::Schema.define(version: 20170708093443) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "sitename",                  default: "", null: false
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20170706095558) do
     t.string   "text",       default: "", null: false
     t.index ["article_id"], name: "index_picks_on_article_id", using: :btree
     t.index ["user_id"], name: "index_picks_on_user_id", using: :btree
+  end
+
+  create_table "reads", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_reads_on_article_id", using: :btree
+    t.index ["user_id"], name: "index_reads_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,4 +68,6 @@ ActiveRecord::Schema.define(version: 20170706095558) do
 
   add_foreign_key "picks", "articles"
   add_foreign_key "picks", "users"
+  add_foreign_key "reads", "articles"
+  add_foreign_key "reads", "users"
 end

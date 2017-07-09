@@ -1,0 +1,19 @@
+!!!
+.mypage__main
+  .mypage__main__contents-area
+    - @reads.each do |read|
+      .main-content__left__news.readed-news
+        .main-content__left__news__top
+          = image_tag(read.article.image, class: "news_image")
+        .main-content__left__news__titlebox
+          .main-content__left__news__titlebox__title
+            = link_to read.article.title.truncate(26), article_path(read.article.id), class: "show-news-link"
+        .main-content__left__news__data.read-description
+          = read.article.description.truncate(50)
+        .read-box
+          = link_to "読んだ", "/reads/#{read.id}", method: :delete, class: "readed"
+        .main-content__left__news__bottom
+          .main-content__left__news__bottom__sitename
+            = read.article.sitename
+          .main-content__left__news__bottom__time
+            = read.article.updated_at.strftime("%Y/%m/%d %H:%M")

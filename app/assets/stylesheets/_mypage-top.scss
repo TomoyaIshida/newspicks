@@ -13,6 +13,7 @@
     bottom: 0;
     margin: auto;
     float: left;
+    margin-top: 100px;
     &__image{
       height: 80px;
       width: 80px;
@@ -57,12 +58,13 @@
   &__info-area{
     height: 55px;
     width: 100%;
-    margin-top: 141px;
+    margin-top: 140px;
     float: left;
     border-top: 1px solid #eee;
+    border-bottom: 4px solid #15274D;
     &__pickbox{
       height: 55px;
-      width: 288px;
+      width: 385px;
       float: left;
       margin-left: 180px;
       &__picks{
@@ -74,7 +76,17 @@
         line-height: 51px;
         text-align: center;
         font-weight: bold;
-        border-bottom: 4px solid #15274D;
+        // border-bottom: 4px solid #15274D;
+      }
+      &__read{
+        height: 51px;
+        width: 96px;
+        float: left;
+        color: #15274D;
+        font-size: 16px;
+        line-height: 51px;
+        text-align: center;
+        font-weight: bold;
       }
       &__follow{
         height: 55px;
@@ -144,4 +156,16 @@
 .mypage_userimage{
   margin-left: 10px;
   margin-top: 8px;
+}
+
+#tab-li{
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  list-style: none;
+}
+
+#tab-li:hover{
+  border-bottom: 4px solid #15274D;
+  transition: border-bottom, 0.2s;
 }
