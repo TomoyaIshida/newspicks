@@ -1,5 +1,9 @@
 class ReadsController < ApplicationController
 
+  def index
+    @reads = current_user.reads.order("updated_at DESC")
+  end
+
   def create
     @read = Read.new(read_params)
     if @read.save
@@ -7,11 +11,12 @@ class ReadsController < ApplicationController
     end
   end
 
-  # def destroy
-  # end
-
-  def show
-    @reads = current_user.reads.order("updated_at DESC")
+  def destroy
+    read = Read.find(params[:id])
+    if read.user_id == current_user.id
+      read.destroy
+      redirect_to reads_path
+    end
   end
 
   private

@@ -21,7 +21,6 @@
       float: left;
       margin-right: 1px;
       position: relative;
-      background-image: image-url('grecee.jpg');
       &__info{
         height: 140px;
         width: 766px;
@@ -69,7 +68,6 @@
         }
         &__sorce{
           height: 30px;
-          width: 110px;
           float: left;
           color: #ecf0f1;
           font-size: 5px;
@@ -79,7 +77,7 @@
           height: 30px;
           width: 70px;
           float: left;
-          margin-left: 5px;
+          margin-left: 15px;
           color: #ecf0f1;
           font-size: 5px;
           line-height: 30px;
@@ -93,13 +91,11 @@
         height: 188px;
         width: 415px;
         margin-bottom: 1px;
-        background-image: image-url('surf.jpg');
         position: relative;
       }
       &__bottom{
         height: 189px;
         width: 415px;
-        background-image: image-url('food.jpg');
         position: relative;
       }
     }
@@ -152,4 +148,23 @@
   color: #F4F4F2;
   font-weight: bold;
   font-size: 18px;
+}
+
+.top-news-link{
+  text-decoration: none;
+  color: #fff;
+}
+
+.top-news-link:hover{
+  color: #eee;
+}
+
+.top-news_image{
+  height: 378px;
+  width: 100%;
+}
+
+.top-right-news_image{
+  height: 188px;
+  width: 415px;
 }

@@ -25,7 +25,7 @@
               %li
                 = link_to "設定", edit_user_path(current_user), id: 'setting'
               %li
-                = link_to "後で読む", read_path(current_user), id: 'read-leter'
+                = link_to "後で読む", reads_path, id: 'read-leter'
               %li
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, id: 'logout'
         .userinfo__post

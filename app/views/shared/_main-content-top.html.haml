@@ -1,32 +1,38 @@
 !!!
 .main-content__top
-  .main-content__top__left
-    .main-content__top__left__info
-      .main-content__top__left__info__picks
-        .main-content__top__left__info__picks__count
-          326
-        .main-content__top__left__info__picks__caption
-          Picks
-      .main-content__top__left__info__title
-        死ぬまでに行きたい絶景。世界一美しいサントリーニ島特集
-      .main-content__top__left__info__sorce
-        Beautiful&nbsp;Destinations
-      .main-content__top__left__info__time
-        3時間前
-  .main-content__top__right
-    .main-content__top__right__top
-      .main-content__top__right__top__info.info
-        .main-content__top__right__top__info__tag.tag
-          特集
-        .main-content__top__right__top__info__caption.caption
-          旬の話題をチェック
-        .main-content__top__right__top__info__title.title
-          GoProが5.2k対応360度カメラを発売へ
-    .main-content__top__right__bottom
-      .main-content__top__right__bottom__info.info
-        .main-content__top__right__bottom__info__tag.tag
-          特集
-        .main-content__top__right__bottom__info__caption.caption
-          IDEOに学ぶデザイン思考
-        .main-content__top__right__bottom__info__title.title
-          デザインがビジネスに与える影響とAirbnb躍進の秘密に迫る
+  - @articles.shuffle.last(1).each do |article|
+    .main-content__top__left
+      = image_tag(article.image, class: "top-news_image")
+      .main-content__top__left__info
+        .main-content__top__left__info__picks
+          .main-content__top__left__info__picks__count
+            = article.picks.length
+          .main-content__top__left__info__picks__caption
+            Picks
+        .main-content__top__left__info__title
+          = link_to article.title.truncate(40), article_path(article.id), class: "top-news-link"
+        .main-content__top__left__info__sorce
+          = article.sitename
+        .main-content__top__left__info__time
+          = article.updated_at.strftime("%Y/%m/%d")
+  - @articles.shuffle.last(1).each do |article|
+    .main-content__top__right
+      .main-content__top__right__top
+        = image_tag(article.image, class: "top-right-news_image")
+        .main-content__top__right__top__info.info
+          .main-content__top__right__top__info__tag.tag
+            特集
+          .main-content__top__right__top__info__caption.caption
+            旬の話題をチェック
+          .main-content__top__right__top__info__title.title
+            = link_to article.title.truncate(32), article_path(article.id), class: "top-news-link"
+      - @articles.shuffle.last(1).each do |article|
+        .main-content__top__right__bottom
+          = image_tag(article.image, class: "top-right-news_image")
+          .main-content__top__right__bottom__info.info
+            .main-content__top__right__bottom__info__tag.tag
+              特集
+            .main-content__top__right__bottom__info__caption.caption
+              NP Premium
+            .main-content__top__right__bottom__info__title.title
+              = link_to article.title.truncate(32), article_path(article.id), class: "top-news-link"
