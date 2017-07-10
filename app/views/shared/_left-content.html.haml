@@ -21,12 +21,12 @@
     .left-content__top__bottom
       .left-content__top__bottom__follow
         .left-content__top__bottom__follow__count
-          437
+          = current_user.followings.count
         .left-content__top__bottom__follow__caption
           フォロー
       .left-content__top__bottom__follower
         .left-content__top__bottom__follower__count
-          502
+          = current_user.followers.count
         .left-content__top__bottom__follower__caption
           フォロワー
   .left-content__main

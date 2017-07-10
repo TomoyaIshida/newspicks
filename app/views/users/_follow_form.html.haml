@@ -1,0 +1,6 @@
+- unless current_user?(@users)
+  #follow_form
+    - if current_user.following?(@users)
+      = render 'unfollow'
+    - else
+      = render 'follow'
