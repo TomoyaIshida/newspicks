@@ -9,6 +9,6 @@
         = link_to article.title.truncate(30), article_path(article.id), class: "show-news-link"
       .main-content__right__news__data
         .main-content__right__news__data__sitename
-          = article.sitename
+          = article.sitename.truncate(20)
         .main-content__right__news__data__time
           = article.updated_at.strftime("%Y/%m/%d")
