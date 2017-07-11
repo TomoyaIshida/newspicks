@@ -1,0 +1,2 @@
+= form_for(current_user.active_relationships.find_by(following_id: @users.id), html: { method: :delete }) do |f| 
+  = f.submit "フォロー中", class: "btn follow-btns"

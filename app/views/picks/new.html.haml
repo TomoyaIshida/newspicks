@@ -5,7 +5,7 @@
       = image_tag(@article.image, class: "news_image")
     .pickarea__content__info
       .pickarea__content__info__title
-        = @article.title.truncate(40)
+        = @article.title.truncate(37)
       .pickarea__content__info__description
         = @article.description.truncate(98)
     = form_for [@article, @pick] do |f| 

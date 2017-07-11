@@ -53,6 +53,14 @@
           margin-left: 5px;
         }
       }
+      &__follow{
+        position: absolute;
+        top: 60px;
+        left: 970px;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
     }
   }
   &__info-area{
@@ -168,4 +176,20 @@
 #tab-li:hover{
   border-bottom: 4px solid #15274D;
   transition: border-bottom, 0.2s;
+}
+
+.follow-btns{
+  display: inline-block;
+  height: 36px;
+  width: 114px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: #37509C;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
 }

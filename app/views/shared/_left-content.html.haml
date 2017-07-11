@@ -17,16 +17,22 @@
             %i.fa.fa-address-card-o.fa-3x.current_user_image_left
         .left-content__top__main__name
           .left-content__top__main__name__signup
-          = link_to "アカウントを作成する", new_user_registration_path, id: "signup-left"
+            = link_to "アカウントを作成する", new_user_registration_path, id: "signup-left"
     .left-content__top__bottom
       .left-content__top__bottom__follow
         .left-content__top__bottom__follow__count
-          437
+          - if user_signed_in?
+            = current_user.followings.count
+          - else
+            -
         .left-content__top__bottom__follow__caption
           フォロー
       .left-content__top__bottom__follower
         .left-content__top__bottom__follower__count
-          502
+          - if user_signed_in?
+            = current_user.followers.count
+          - else
+            -
         .left-content__top__bottom__follower__caption
           フォロワー
   .left-content__main
@@ -35,55 +41,30 @@
         タイムライン
       .left-content__main__top__icon
         ＞
-  .left-content__info
-    .left-content__info__main__timeline
-      .left-content__info__main__timeline__border
-      .left-content__info__main__timeline__main
-        .left-content__info__main__timeline__main__info
-          .left-content__info__main__timeline__main__info__image
-            = image_tag('profile.jpg', size: '28x28')
-          .left-content__info__main__timeline__main__info__data
-            .left-content__info__main__timeline__main__info__data__name
-              石田 友哉
-            .left-content__info__main__timeline__main__info__data__time
-              4時間前
-        .left-content__info__main__timeline__main__comment
-          NewsPicksを作成中です。
-        .left-content__info__main__timeline__main__link
-          Facebookがミッション変更「世界のつながりをより密に」
-        .left-content__info__main__timeline__main__pick
-          をpickしました。
-    .left-content__info__main__timeline
-      .left-content__info__main__timeline__border
-      .left-content__info__main__timeline__main
-        .left-content__info__main__timeline__main__info
-          .left-content__info__main__timeline__main__info__image
-            = image_tag('profile.jpg', size: '28x28')
-          .left-content__info__main__timeline__main__info__data
-            .left-content__info__main__timeline__main__info__data__name
-              石田 友哉
-            .left-content__info__main__timeline__main__info__data__time
-              8時間前
-        .left-content__info__main__timeline__main__comment
-          NewsPicksを作成中です。
-        .left-content__info__main__timeline__main__link
-          「メルカリ」ウェブ版で個人情報流出、最大で5万4180人に影響
-        .left-content__info__main__timeline__main__pick
-          をpickしました。
-    .left-content__info__main__timeline
-      .left-content__info__main__timeline__border
-      .left-content__info__main__timeline__main
-        .left-content__info__main__timeline__main__info
-          .left-content__info__main__timeline__main__info__image
-            = image_tag('profile.jpg', size: '28x28')
-          .left-content__info__main__timeline__main__info__data
-            .left-content__info__main__timeline__main__info__data__name
-              石田 友哉
-            .left-content__info__main__timeline__main__info__data__time
-              13時間前
-        .left-content__info__main__timeline__main__comment
-          NewsPicksを作成中です。
-        .left-content__info__main__timeline__main__link
-          一部のUber社員がTravis Kalanickの復帰を要求する嘆願書を提出
-        .left-content__info__main__timeline__main__pick
-          をpickしました。
+  -if user_signed_in?
+    .left-content__info
+      - current_user.followings.each do |user|
+        - user.picks.each do |pick|
+          .left-content__info__main__timeline
+            .left-content__info__main__timeline__border
+            .left-content__info__main__timeline__main
+              .left-content__info__main__timeline__main__info
+                .left-content__info__main__timeline__main__info__image
+                  - if user.image.blank?
+                    %i.fa.fa-user-circle-o.fa-2x.left_image
+                  - else
+                    = image_tag(user.image, class: "follower_image_left")
+                .left-content__info__main__timeline__main__info__data
+                  .left-content__info__main__timeline__main__info__data__name
+                    = link_to user.name, user_path(user.id), class: "user_news_link"
+                  .left-content__info__main__timeline__main__info__data__time
+                    = pick.updated_at.strftime("%Y/%m/%d")
+              .left-content__info__main__timeline__main__comment
+                - if pick.text.blank?
+                  まだメッセージはありません
+                - else
+                  = pick.text.truncate(25)
+              .left-content__info__main__timeline__main__link
+                = link_to pick.article.title.truncate(26), article_path(pick.article.id), class: "follow-news-link"
+              .left-content__info__main__timeline__main__pick
+                をpickしました。

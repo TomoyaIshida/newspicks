@@ -1,0 +1,3 @@
+= form_for(current_user.active_relationships.build) do |f| 
+  %div= hidden_field_tag :following_id, @users.id
+  = f.submit "フォロー", class: "btn btn-primary follow-btns"
