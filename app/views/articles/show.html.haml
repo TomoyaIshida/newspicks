@@ -17,10 +17,11 @@
           = @articles.updated_at.strftime("%Y/%m/%d %H:%M")
       .show-content__news__link
         = link_to "続きを読む", @articles.url, class: "news-link-button"
-      .show-content__news__read
-        = form_for(@read) do |f| 
-          = f.hidden_field :article_id, :value => @articles.id
-          = f.submit "後で読む", class: "read-button"
+      - if user_signed_in?
+        .show-content__news__read
+          = form_for(@read) do |f| 
+            = f.hidden_field :article_id, :value => @articles.id
+            = f.submit "後で読む", class: "read-button"
     .show-content__comment
       .show-content__comment__postbox
         - if user_signed_in?

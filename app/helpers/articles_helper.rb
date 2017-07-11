@@ -2,7 +2,7 @@ module ArticlesHelper
 
  def pickinfo(pick)
   if pick.text.blank?
-    "まだメッセージはありません。"
+    "まだメッセージはありません"
   else
     pick.text
   end
@@ -10,7 +10,7 @@ module ArticlesHelper
 
  def pickfront(pick)
   if pick.text.blank?
-    "まだメッセージはありません。"
+    "まだメッセージはありません"
   else
     pick.text
   end
