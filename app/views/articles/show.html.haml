@@ -16,7 +16,7 @@
         .show-content__news__info__time
           = @articles.updated_at.strftime("%Y/%m/%d %H:%M")
       .show-content__news__link
-        = link_to "続きを読む", @articles.url, class: "news-link-button"
+        = link_to "続きを読む", @articles.url, class: "news-link-button", target: "_new"
       - if user_signed_in?
         .show-content__news__read
           = form_for(@read) do |f| 
@@ -49,4 +49,4 @@
               .show-content__comment__textarea__userinfo__cap__company
                 = pick.user.company
               .show-content__comment__textarea__userinfo__cap__comment
-                = pickfront(pick)
+                = pickshow(pick)
