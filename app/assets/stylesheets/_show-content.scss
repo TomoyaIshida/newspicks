@@ -119,8 +119,9 @@
   &__textarea{
     height: 10%;
     width: 628px;
-    padding: 30px 0;
+    padding: 30px 0 50px 0;
     border-bottom: 1px solid #eee;
+    position: relative;
     &__userinfo{
       height: 50px;
       width: 588px;
@@ -180,24 +181,6 @@
 .news-link-button:hover{
   color: #fff;
 }
-
-// .news-read-button{
-//   line-height: 50px;
-//   color: #ff9900;
-//   font-size: 15px;
-//   cursor: pointer;
-//   text-decoration: none;
-//   padding-bottom:1px;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 100%;
-// }
-
-// .news-read-button:hover{
-//   color: #fff;
-// }
 
 .read-button{
   display: inline-block;
@@ -262,4 +245,27 @@
 
 .pick-button-show:hover{
   color: #fff;
+}
+
+.like{
+  height: 40px;
+  width: 50px;
+  float: right;
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  left: 580px;
+  right: 0;
+  bottom: 10px;
+  margin: auto;
+}
+
+.btn-default{
+  color: #999;
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+.fa-thumbs-o-up{
+  color: #15274D;
 }

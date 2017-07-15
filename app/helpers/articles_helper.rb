@@ -4,7 +4,7 @@ module ArticlesHelper
   if pick.text.blank?
     "まだメッセージはありません"
   else
-    pick.text
+    pick.text.truncate(70)
   end
  end
 
@@ -12,7 +12,15 @@ module ArticlesHelper
   if pick.text.blank?
     "まだメッセージはありません"
   else
-    pick.text
+    pick.text.truncate(70)
+  end
+ end
+
+ def pickshow(pick)
+  if pick.text.blank?
+    "まだメッセージはありません"
+  else
+    pick.text.truncate(50)
   end
  end
 

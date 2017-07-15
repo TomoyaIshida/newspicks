@@ -28,6 +28,10 @@
 
 * has_many :followers, through: :passive_relationships, source: :follower
 
+* has_many :likes, dependent: :destroy
+
+* has_many :like_picks, through: :likes, source: :pick
+
 
 ## articles table
 
@@ -63,6 +67,10 @@
 
 * belongs_to:article
 
+* has_many :likes, dependent: :destroy
+
+* has_many :liking_users, through: :likes, source: :user
+
 
 ## reads table
 
@@ -92,3 +100,18 @@
 * belongs_to :follower, class_name: "User"
 
 * belongs_to :following, class_name: "User"
+
+
+## likes table
+
+
+|   Column   |       Type        |            Options              |
+|:----------:|:-----------------:|:-------------------------------:|
+| user_id    | references:user   |foreign_key: true, index: true   |
+| pick_id    | references:pick   |foreign_key: true, index: true   |
+
+### Association
+
+* belongs_to:user
+
+* belongs_to:pick
