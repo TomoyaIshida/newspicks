@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
     @articles = Article.find(params[:id])
     @pick = Pick.new
     @read = Read.new
+    @like = Like.new
   end
 
   private

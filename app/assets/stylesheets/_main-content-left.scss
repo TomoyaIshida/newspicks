@@ -4,18 +4,17 @@
   float: left;
   &__news{
     height: 400px;
-    width: 47%;
     float: left;
     margin: 0 11px;
     margin-bottom: 20px;
     background-color: #fff;
     &__top{
       height: 144px;
-      width: 100%;
+      width: 344px;
       position: relative;
       &__picks{
         height: 30px;
-        width: 21%;
+        width: 70px;
         border: 1px solid #fff;
         float: right;
         color: #fff;
@@ -48,11 +47,11 @@
     }
     &__titlebox{
       height: 100px;
-      width: 100%;
+      width: 344px;
       position: relative;
       &__title{
         height: 65px;
-        width: 95%;
+        width: 324px;
         font-size: 22px;
         font-weight: bold;
         position: absolute;
@@ -66,7 +65,7 @@
     }
     &__data{
       height: 40px;
-      width: 100%;
+      width: 344px;
       &__image{
         height: 33px;
         width: 33px;
@@ -94,18 +93,18 @@
     }
     &__commentbox{
       height: 50px;
-      width: 100%;
+      width: 344px;
       margin-top: 10px;
       &__comment{
         height: 50px;
-        width: 95%;
+        width: 324px;
         margin: 0 auto;
         font-size: 13px;
       }
     }
     &__bottom{
       height: 30px;
-      width: 100%;
+      width: 344px;
       margin-top: 25px;
       border-top: 1px solid #eee;
       &__sitename{

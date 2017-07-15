@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :create, :show] do
     resources :picks, only: [:new, :create]
   end
+  resources :likes, only: [:create, :destroy]
 end
