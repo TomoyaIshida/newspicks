@@ -1,6 +1,6 @@
 .left-content{
   height: 100vh;
-  min-height: 100%;
+  // min-height: 100%;
   width: 216px;
   float: left;
   position: relative;
@@ -132,6 +132,7 @@
   }
   &__info{
     height: 455px;
+    // height: 100vh;
     width: 216px;
     overflow: scroll;
     &__main{

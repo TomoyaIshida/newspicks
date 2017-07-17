@@ -86,16 +86,16 @@
     }
     &__right{
       float: left;
-      width: 33%;
+      width: 33.3%;
       &__top{
         height: 188px;
-        width: 415px;
+        width: 100%;
         margin-bottom: 1px;
         position: relative;
       }
       &__bottom{
         height: 189px;
-        width: 415px;
+        width: 100%;
         position: relative;
       }
     }
@@ -166,5 +166,12 @@
 
 .top-right-news_image{
   height: 188px;
-  width: 415px;
+  // width: 415px;
+  width: 100%;
 }
+
+.paginate{
+  clear: both;
+  height: 50px;
+}
+

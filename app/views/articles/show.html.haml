@@ -45,20 +45,21 @@
                 = image_tag(pick.user.image, class: "show-comment-image")
             .show-content__comment__textarea__userinfo__cap
               .show-content__comment__textarea__userinfo__cap__name
-                = pick.user.name
+                = link_to pick.user.name, user_path(pick.user.id), id: 'mypage-left'
               .show-content__comment__textarea__userinfo__cap__company
                 = pick.user.company
               .show-content__comment__textarea__userinfo__cap__comment
                 = pickshow(pick)
-          .like
-            %div.like-link{id: "like-link-#{pick.id}"}
-              - if current_user.likes.find_by(pick_id: pick.id)
-                = link_to like_path(current_user.likes.ids), method: :delete do
-                  %i.fa.fa-thumbs-o-up.fa-lg
-                .btn.btn-default
-                  = pick.likes.count.to_s
-              - else
-                = link_to likes_path(pick_id: pick.id), method: :post do
-                  %i.fa.fa-thumbs-o-up.fa-lg
-                .btn.btn-default
-                  = pick.likes.count.to_s
+          -if user_signed_in?
+            .like
+              %div.like-link{id: "like-link-#{pick.id}"}
+                - if current_user.likes.find_by(pick_id: pick.id)
+                  = link_to like_path(current_user.likes.ids), method: :delete do
+                    %i.fa.fa-thumbs-o-up.fa-lg
+                  .btn.btn-default
+                    = pick.likes.count.to_s
+                - else
+                  = link_to likes_path(pick_id: pick.id), method: :post do
+                    %i.fa.fa-thumbs-o-up.fa-lg
+                  .btn.btn-default
+                    = pick.likes.count.to_s
