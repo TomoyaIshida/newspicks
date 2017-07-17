@@ -45,7 +45,7 @@
                 = image_tag(pick.user.image, class: "show-comment-image")
             .show-content__comment__textarea__userinfo__cap
               .show-content__comment__textarea__userinfo__cap__name
-                = pick.user.name
+                = link_to pick.user.name, user_path(pick.user.id), id: 'mypage-left'
               .show-content__comment__textarea__userinfo__cap__company
                 = pick.user.company
               .show-content__comment__textarea__userinfo__cap__comment

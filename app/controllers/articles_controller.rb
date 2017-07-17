@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.all.order("updated_at DESC").limit(20)
+    @articles = Article.all.order("updated_at DESC").page(params[:page]).per(18)
   end
 
   def create
