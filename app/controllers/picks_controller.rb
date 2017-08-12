@@ -19,9 +19,12 @@ class PicksController < ApplicationController
     end
   end
 
-  def update
+  def destroy
     pick = Pick.find(params[:id])
-    pick.update(pick_update_params) if pick.user_id == current_user.id
+    if pick.user_id == current_user.id
+      pick.destroy
+      redirect_to user_path(current_user.id)
+    end
   end
 
   private

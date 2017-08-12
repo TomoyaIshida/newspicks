@@ -27,3 +27,6 @@
             = pick.article.sitename.truncate(20)
           .main-content__left__news__bottom__time
             = pick.article.updated_at.strftime("%Y/%m/%d %H:%M")
+          - if user_signed_in? && current_user.id == pick.user_id
+            .read-box
+              = link_to "削除", "/articles/#{pick.article.id}/picks/#{pick.id}", method: :delete, class: "pick-delete"

@@ -23,13 +23,13 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_picks, through: :likes, source: :pick
 
-  def follow(other_user)
-    active_relationships.create(following_id: other_user.id)
-  end
+  # def follow(other_user)
+  #   active_relationships.create(following_id: other_user.id)
+  # end
 
-  def unfollow(other_user)
-    active_relationships.find_by(following_id: other_user.id).destroy
-  end
+  # def unfollow(other_user)
+  #   active_relationships.find_by(following_id: other_user.id).destroy
+  # end
 
   def following?(other_user)
     active_relationships.find_by(following_id: other_user.id)

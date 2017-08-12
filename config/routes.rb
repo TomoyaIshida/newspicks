@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :reads, only: [:index, :create, :destroy]
-  resources :articles, only: [:index, :create, :show] do
-    resources :picks, only: [:new, :create]
+  resources :articles, only: [:index, :create, :show, :destroy] do
+    resources :picks, only: [:new, :create, :destroy]
   end
   resources :likes, only: [:create, :destroy]
 end

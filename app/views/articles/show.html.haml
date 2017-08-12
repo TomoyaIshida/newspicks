@@ -54,12 +54,12 @@
             .like
               %div.like-link{id: "like-link-#{pick.id}"}
                 - if current_user.likes.find_by(pick_id: pick.id)
-                  = link_to like_path(current_user.likes.ids), method: :delete do
+                  = link_to like_path(current_user.likes.ids, article_id: @articles.id), method: :delete do
                     %i.fa.fa-thumbs-o-up.fa-lg
                   .btn.btn-default
                     = pick.likes.count.to_s
                 - else
-                  = link_to likes_path(pick_id: pick.id), method: :post do
+                  = link_to likes_path(pick_id: pick.id, article_id: @articles.id), method: :post do
                     %i.fa.fa-thumbs-o-up.fa-lg
                   .btn.btn-default
                     = pick.likes.count.to_s

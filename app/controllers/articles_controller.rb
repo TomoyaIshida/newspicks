@@ -30,6 +30,17 @@ class ArticlesController < ApplicationController
     @like = Like.new
   end
 
+  def destroy
+    article = Article.find(params[:id])
+    @articles = article.picks
+    if @articles.ids.blank?
+      article.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
   def article_params
     agent = Mechanize.new

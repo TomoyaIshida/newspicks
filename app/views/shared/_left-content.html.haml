@@ -44,7 +44,7 @@
   -if user_signed_in?
     .left-content__info
       - current_user.followings.each do |user|
-        - user.picks.each do |pick|
+        - user.picks.order("updated_at DESC").each do |pick|
           .left-content__info__main__timeline
             .left-content__info__main__timeline__border
             .left-content__info__main__timeline__main

@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-  end
-
   def show
     @users = User.find(params[:id])
     @picks = @users.picks.order("updated_at DESC")
@@ -18,18 +15,6 @@ class UsersController < ApplicationController
     else
       render action: :edit
     end
-  end
-
-  def following
-    @user  = User.find(params[:id])
-    @users = @user.following
-    render 'show_follower'
-  end
-
-  def followers
-    @user  = User.find(params[:id])
-    @users = @user.followers
-    render 'show_follower'
   end
 
   private

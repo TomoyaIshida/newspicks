@@ -25,3 +25,22 @@
 .show-news-link:hover{
   color: #37509C;
 }
+
+.pick-delete{
+  height: 26px;
+  width: 50px;
+  color: #ff9900;
+  background-color: #fff;
+  border: 1px solid #ff9900;
+  float: right;
+  margin: auto;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+}
+
+.pick-delete:hover{
+  background-color: #ff9900;
+  color: #fff;
+}
